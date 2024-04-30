@@ -1,1 +1,37 @@
+### **Microsoft Excel** 
+
+-  I started by creating copies of the datasets I downloaded.
+- Found and deleted duplicate values
+
+
+-  ![Duplicate values](https://github.com/cardina50/Breakfast-Bed-Tokyo/assets/130823144/09d57594-729f-46d1-b4fd-9d8dc7fb2d7b)
+
+- Listing with zero price found and deleted.
+-
+- ![Listing with 0 price](https://github.com/cardina50/Breakfast-Bed-Tokyo/assets/130823144/a90dc246-5753-4f20-808a-6ccffeff5a23)
+
+- Deleted the License, neighbourhood_group, name,  last_review, reviews_per_month, number_of_reviews_itm columns
+
+- Changed the data format of id, host_id, and neighborhood from General to Text, I also changed the price column, from general to currency, specifically Japanese Yen.
+
+-  Deleted host_name column, because a lot of names in the column appeared in special characters and were ineligible.
+
+- ![Delete host_name](https://github.com/cardina50/Breakfast-Bed-Tokyo/assets/130823144/64daf629-884e-4407-a31c-1176c38672c2)
+
+- 1252 records with zero reviews found and deleted.
+
+- Used Vlookup function to extract Maximum nights from the Calendar Spreadsheet. 
+ =VLOOKUP(A2, calendar.csv!$A:$G, 7,FALSE)
+
+-  Found 8302 listings where Vlookup couldn’t find the maximum nights from the calendar spreadsheet, so I used an error handler, IFERROR Formula to substitute #N/A with 0.
+-  =IFERROR(VLOOKUP(A2, calendar.csv!$A:$G, 7,FALSE), 0) and deleted them.
+
+
+### **Tableau**
+
+- Created a calculated field named "Category" using the IF statement to classify listings based on their prices. 
+- 
+- ![Screen Shot 2024-04-30 at 7 29 36 AM](https://github.com/cardina50/Breakfast-Bed-Tokyo/assets/130823144/8734b3d8-051f-4c4d-9b20-45e9c7f20040)
+- 
+
 
